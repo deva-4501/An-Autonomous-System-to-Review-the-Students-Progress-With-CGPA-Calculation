@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="reg.css">
+
+</head>
+<body>
+    <center>
+        <table border="4">
+            <thead>
+                <tr>
+                    <th>Reg.No</th>
+                    <td><input type="text" name="regno" id="regno"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" name="fname" id="fname"></td>
+
+                </tr>
+
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text" name="lname" id="lname"></td>
+
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="text" name="email" id="email"></td>
+                    
+                </tr> 
+                <tr>
+                    <th>Year</th>
+                    <td><input type="text" name="year" id="year"></td>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr id="btna">
+                    
+                    <td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+                    
+                    
+                </tr>
+            
+            </tbody>
+            </table>
+            <table border="4" id="show">
+
+                <thead>
+                    
+                    <tr>
+                        <th>Reg no</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Year</th>
+                        <th>CGPA</th>
+                        <th>student progress</th>
+                        
+                 </tr>
+                 <tr id="show">
+                    <td>${Regno}</td>
+                    <td>${First_Name}</td>
+                    <td>${Last_Name}</td>
+                    <td>${email}</td>
+                    <td>${depart}</td>
+                    <td>${year}</td>
+                    <td><a href="index.html" size="300px"<form><button class="btn btn-outline-success" type="submit">CGPA</button></form></td>      
+                    <td><button class="deleteBtn">student progress</button></td>
+                 </tr>
+                
+                </thead>
+        
+            </table>
+            </center>
+            
+            <script>
+
+ 
+                var list1 = [];
+                var list2 = [];
+                var list3 = [];
+                var list4 = [];
+                var list5 = [];
+                
+                
+                 var n = 1;
+                 var x = 0;
+
+                 function AddRow(){ 
+        
+                    var AddRown = document.getElementById('show');
+                    var NewRow = AddRown.insertRow(n);
+                    
+        
+                     list1[x] = document.getElementById("regno").value;
+                     list2[x] = document.getElementById("fname").value;
+                     list3[x] = document.getElementById("lname").value;
+                     list4[x] = document.getElementById("email").value;
+                     list5[x] = document.getElementById("year").value;
+                     
+                     
+                     
+        
+                     var cel1 =  NewRow.insertCell(0);
+                     var cel2 =  NewRow.insertCell(1);
+                     var cel3 =  NewRow.insertCell(2);
+                     var cel4 =  NewRow.insertCell(3);
+                     var cel5 =  NewRow.insertCell(4);
+                     
+        
+                     cel1.innerHTML = list1[x];
+                     cel2.innerHTML = list2[x];
+                     cel3.innerHTML = list3[x];
+                     cel4.innerHTML = list4[x];
+                     cel5.innerHTML = list5[x];
+                     
+                     n++;
+                     x++;
+                 }
+                     function onDeleteRow(e){
+                       if(!e.target.classList.contains("deleteBtn")){
+                        return;
+                       }
+                       const btn = e.target;
+                       btn.closest("tr").removed();
+                       
+          }
+          
+          NewRow.addEventListener("submit", onDeleteRow);
+                
+            </script> 
+            <a href="login.html"></a>
+
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student progress</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="chart.css">
+</head>
+<body>
+    <h1>STUDENT CHART</h1>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <script class="53">
+        var xValues = ["CA1", "CA2", "CA3", "MODEL"];
+        var yValues = [34,66,55,78,];
+        var barColors = ["red", "green","blue","orange","brown"];
+        
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "STUDENT STATUS"
+            }
+          }
+        });
+        </script>
+        <a href="student.html"></a>
